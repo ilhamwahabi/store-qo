@@ -1,6 +1,7 @@
 *.pyc
 */*.pyc
-db.sqlite3
+# TODO: Detach sqlite3 DB from code
+# db.sqlite3
 static/bower_components/
 node_modules/*
 bookoe.sublime-workspace
