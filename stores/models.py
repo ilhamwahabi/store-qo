@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator, MinValueValidator
 from accounts.models import *
 
 class StoreManager(models.Manager):
@@ -28,6 +29,8 @@ class Store(models.Model):
     address = models.CharField(max_length=150, blank=False)
     type = models.CharField(max_length=10, choices=TYPE, default=CAFE)
     description = models.CharField(max_length=250, blank=False)
+    price_rating = models.FloatField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
+    image = models.TextField(blank=True)
     owner = models.ForeignKey(
         Account, related_name='stores', on_delete=models.PROTECT
     )
