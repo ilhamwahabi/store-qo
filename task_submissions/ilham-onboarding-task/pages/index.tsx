@@ -5,7 +5,9 @@ import { AxiosResponse } from 'axios';
 
 import { instance } from '../services/api';
 import { IStores } from '../interfaces/store';
+
 import { Stores } from '../components/Stores';
+import { Store } from '../components/Store';
 
 const fetchStores = (url: string) => instance.get(url);
 
@@ -25,7 +27,11 @@ const Home = () => {
       <p>Store-Qo</p>
       <Stores>
         {data.data.results.map(store => (
-          <p key={store.id}>{store.name}</p>
+          <Store key={store.id}>
+            <p>{store.name}</p>
+            <p>{store.type}</p>
+            <p>{store.price_rating}</p>
+          </Store>
         ))}
       </Stores>
     </div>
