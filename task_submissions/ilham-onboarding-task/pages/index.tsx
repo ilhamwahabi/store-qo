@@ -9,6 +9,7 @@ import { IStores } from '../interfaces/store';
 import { Stores } from '../components/Stores';
 import { Store } from '../components/Store';
 import { StoreItem } from '../components/StoreItem';
+import { Title } from '../components/Title';
 
 const fetchStores = (url: string) => instance.get(url);
 
@@ -25,7 +26,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <p>Store-Qo</p>
+      <Title>Store-Qo</Title>
       <Stores>
         {data.data.results.map(store => (
           <Store key={store.id}>
