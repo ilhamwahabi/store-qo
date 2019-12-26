@@ -8,6 +8,7 @@ import { IStores } from '../interfaces/store';
 
 import { Stores } from '../components/Stores';
 import { Store } from '../components/Store';
+import { StoreItem } from '../components/StoreItem';
 
 const fetchStores = (url: string) => instance.get(url);
 
@@ -28,9 +29,12 @@ const Home = () => {
       <Stores>
         {data.data.results.map(store => (
           <Store key={store.id}>
-            <p>{store.name}</p>
-            <p>{store.type}</p>
-            <p>{store.price_rating}</p>
+            <StoreItem>{store.name}</StoreItem>
+            <StoreItem>{store.type}</StoreItem>
+            <StoreItem>
+              Rating:
+              {store.price_rating}
+            </StoreItem>
           </Store>
         ))}
       </Stores>
