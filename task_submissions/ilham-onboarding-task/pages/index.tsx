@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import useSWR from 'swr';
 import { AxiosResponse } from 'axios';
 
@@ -29,14 +30,16 @@ const Home = () => {
       <Title>Store-Qo</Title>
       <Stores>
         {data.data.results.map(store => (
-          <Store key={store.id}>
-            <StoreItem>{store.name}</StoreItem>
-            <StoreItem>{store.type}</StoreItem>
-            <StoreItem>
-              Rating:
-              {store.price_rating}
-            </StoreItem>
-          </Store>
+          <Link href={`/store/${store.id}`}>
+            <Store key={store.id}>
+              <StoreItem>{store.name}</StoreItem>
+              <StoreItem>{store.type}</StoreItem>
+              <StoreItem>
+                Rating:
+                {store.price_rating}
+              </StoreItem>
+            </Store>
+          </Link>
         ))}
       </Stores>
     </div>
