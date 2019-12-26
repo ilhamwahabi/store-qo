@@ -1,0 +1,56 @@
+{
+  "name": "ilham-onboarding-task",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "analyze:lint": "eslint --ext .tsx --ext .ts .",
+    "analyze:prettier": "prettier --check '**/*.{tsx,ts,scss,md,json}'",
+    "analyze": "yarn analyze:lint && yarn analyze:prettier",
+    "fix:lint": "eslint --ext .tsx --ext .ts . --fix",
+    "fix:prettier": "prettier --write '**/*.{tsx,ts,scss,md,json}'",
+    "fix": "yarn fix:lint && yarn fix:prettier"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-checkout": "yarnhook",
+      "post-merge": "yarnhook",
+      "post-rewrite": "yarnhook"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,scss,md,json}": [
+      "yarn fix",
+      "git add ."
+    ]
+  },
+  "dependencies": {
+    "@types/styled-components": "^4.4.1",
+    "axios": "^0.19.0",
+    "next": "9.1.6",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "styled-components": "^4.4.1",
+    "swr": "^0.1.15"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.0",
+    "@types/react": "^16.9.17",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.8.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4",
+    "yarnhook": "^0.4.3"
+  }
+}
