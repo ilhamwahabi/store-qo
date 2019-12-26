@@ -5,4 +5,7 @@ export const Store = styled.h1`
   border-radius: 10px;
   color: #f2f2f3;
   padding: 25px 50px;
+
+  width: 30%;
+  box-sizing: border-box;
 `;
