@@ -6,6 +6,8 @@ import { AxiosResponse } from 'axios';
 import { instance } from '../../services/api';
 import { IStoreDetail } from '../../interfaces/store';
 
+import { Layout } from '../../components/Layout';
+
 const fetchStores = (url: string) => instance.get(url);
 
 const StoreDetail = () => {
@@ -20,7 +22,7 @@ const StoreDetail = () => {
   const { address, description, name, image, owner, phone, price_rating } = data.data;
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Store-Qo |{name}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,7 +36,7 @@ const StoreDetail = () => {
         <p>{price_rating}</p>
         <p>{description}</p>
       </div>
-    </div>
+    </Layout>
   );
 };
 

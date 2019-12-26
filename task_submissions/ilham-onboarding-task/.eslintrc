@@ -7,13 +7,15 @@
   },
   "rules": {
     "arrow-parens": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "camelcase": "off",
     "no-unused-vars": "off",
     "import/no-unresolved": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-undef": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off"
   }
 }
