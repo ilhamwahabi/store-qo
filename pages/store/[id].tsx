@@ -19,12 +19,17 @@ const StoreDetail = () => {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  const { address, description, name, image, owner, phone, price_rating } = data.data;
+  const {
+    address, description, name, image, owner, phone, price_rating,
+  } = data.data;
 
   return (
     <Layout>
       <Head>
-        <title>Store-Qo |{name}</title>
+        <title>
+Store-Qo |
+          {name}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>

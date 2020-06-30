@@ -45,10 +45,9 @@ const Home = () => {
 
   const handleScroll = () => {
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
-      document.documentElement.offsetHeight
-    )
-      return;
+      window.innerHeight + document.documentElement.scrollTop
+      !== document.documentElement.offsetHeight
+    ) { return; }
     loadMore();
   };
 
